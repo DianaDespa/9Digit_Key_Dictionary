@@ -1,9 +1,5 @@
-Despa Diana-Alexandra 311CA
+Dictionar T9
 
-Tema 4 - Dictionar T9
-
-	In realizarea acestei teme am utilizat 3 header-e, care cuprind 
-implementarea a trei structuri: Treap, Trie si Key.
 	Structura Key este folosita pentru reprezentarea unui sir de caractere 
 impreuna cu numarul de aparitii ale acestuia, prin intermediul campurilor s si 
 prio. Am supraincarcat operatorii de comparatie, astfel incat, atunci cand este
