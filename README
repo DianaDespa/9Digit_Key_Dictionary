@@ -1,0 +1,39 @@
+Despa Diana-Alexandra 311CA
+
+Tema 4 - Dictionar T9
+
+	In realizarea acestei teme am utilizat 3 header-e, care cuprind 
+implementarea a trei structuri: Treap, Trie si Key.
+	Structura Key este folosita pentru reprezentarea unui sir de caractere 
+impreuna cu numarul de aparitii ale acestuia, prin intermediul campurilor s si 
+prio. Am supraincarcat operatorii de comparatie, astfel incat, atunci cand este
+cazul, mai multe elemente de tip Key sa fie ordonate normal dupa campul prio, 
+adica in functie de numarul de aparitii, si in sens invers dupa campul s, adica
+invers din punct de vedere lexicografic. Am ales aceasta metoda deoarece, atunci
+cand se doreste gasirea celui de-al k-lea nod, dupa numarul de aparitii, in 
+treap, si mai multe siruri de caractere au acelasi numar de aparitii, rezultatul
+cautarii va fi cheia cu sirul cel mai mic din punct de vedere lexicografic.
+	Structura generica Treap cuprinde metodele clasice (de stergere si de 
+insertie, de rotire, de gasire a unei chei si de verificare daca un nod este 
+nil) si o metoda de gasire a cheii cu indicele k, intr-o parcurgere inordine.
+	Structura Trie este implementata special pentru a avea un treap in fiecare 
+nod (pointerul membru "info"). Ea cuprinde metodele insert si find. Metoda 
+insert primeste ca parametrii un sir de caractere cu cifrele reprezentand calea
+din trie (nr), un sir de caractere(value), un numar de aparitii(prio) si un 
+caracter ce reprezinta optiunea cu care se face insertia(option). In metoda este 
+parcursa recursiv structura trie, pana se ajunge la calea indicata de nr. Aici 
+este creat un nou nod de tip Key, format cu parametrii value si prio, iar acesta
+este introdus in treap-ul de la calea respectiva, cu o prioritate generata 
+aleatoriu, tinandu-se cont de optiune. Optiunea '0' determina insertia unui nod
+fara actualizarea numarului de aparitii, iar orice alta optiunea - insertia cu 
+actualizarea numarului de apartii al sirului de caractere dintr-o anumita cheie.
+Metoda find pargurge recursiv trie-ul si intoarce un pointer la structura de tip
+treap aflata la calea nr, data ca parametru metodei.
+	In programul principal se realizeaza citirea si procesarea datelor din 
+fisier. La citirea listei de cuvinte, se adauga la trie cuvintele cu numerele
+de aparitii corespunzatoare, in treap-urile de la caile indicate de 
+reprezentarea cu cifre a fiecarui cuvant. La citirea sirurilor venite de la 
+tastatura, sunt cautate in trie treap-urile de la caile indicate de fiecare sir
+de cifre si este afisat cuvantul cu numarul de aparitii depinzand de alegerea 
+utilizatorului. De asemenea, numarul de aparitii al acestui cuvant este 
+actualizat.
